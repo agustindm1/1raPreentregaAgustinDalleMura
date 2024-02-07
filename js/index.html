@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<p>&nbsp;</p>
+<p>Monto inicial 
+  <input type="text" id="monto_inicial" name="monto_inicial" style=" width: 100px;">
+</p>
+<p>% de descuento: 
+   <input type="text" id="descuento" name="descuento" style=" width: 100px;">
+</p>
+<p>
+  
+  Importe Descontado 
+  <input type="text" id="importe_descontado" name="importe_descontado" style=" width: 100px;" readonly="readonly">
+</p>
+<p>Total 
+  
+  <input type="text" id="total" name="total" style=" width: 100px;" readonly="readonly">
+</p>
+
+     <a href="javascript:calcular();"><span style=" float: left; margin-right: 10px; margin-bottom: 5px; font-size:20px; background-color: #CCC; color:#000;" value="" type="submit" class="boton" id="btn_calcula" name="btn_calcula"  >Calcular</span></a>
+
+<script type="text/javascript">
+
+function calcular(){
+
+var monto_ini =0;
+var desc =0;
+var imp_desc = 0;
+var total =0;
+
+monto_ini = document.getElementById('monto_inicial').value;
+desc = document.getElementById('descuento').value;
+
+
+imp_desc = (monto_ini * desc)/100;
+
+document.getElementById('importe_descontado').value=imp_desc;
+
+total = monto_ini - imp_desc
+
+document.getElementById('total').value=total;
+console.log(total);
+}
+
+
+</script>
+</body>
